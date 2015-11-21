@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <style type="text/css">
+        .todolist{
+            height: 50px;
+            line-height: 22px;
+        }
+        .todo_delete:after{
+            content: '✖';
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="form form-group col-md-10 center-block">
+        <input id="txtTodo" type="text" class="form-control input-lg" placeholder="待辦事項">
+      </div>
+      <div class="form form-group col-md-2 center-block">
+        <button id="btnAdd" class="btn btn-primary btn-lg btn-block">新增</button>
+      </div>
+    </div>
+    <ul class="list-group" id="list">
+    </ul>
+</body>
+</html>

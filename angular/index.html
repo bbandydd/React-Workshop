@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="todoController.js"></script>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <style type="text/css">
+        .todolist{
+            height: 50px;
+            line-height: 22px;
+        }
+        .todo_delete:after{
+            content: '✖';
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="todoController">
+        <div class="container-fluid">
+            <form class="form col-md-10 center-block">
+              <div class="form-group">
+                <input ng-model="text" type="text" class="form-control input-lg" placeholder="待辦事項">
+              </div>
+            </form>
+            <form class="form col-md-2 center-block">
+              <div class="form-group">
+                <button ng-click="add()" class="btn btn-primary btn-lg btn-block">新增</button>
+              </div>
+            </form>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item todolist" ng-repeat="item in items">
+            <form class="form col-md-10">
+              <p>{{ item.text }}</p>
+            </form>
+            <form class="form col-md-1">
+              <button class="btn btn-danger pull-right todo_delete" ng-click="delete($index);"></button>
+            </form>
+          </li>
+        </ul>
+
+
+    </div>
+</body>
+</html>
