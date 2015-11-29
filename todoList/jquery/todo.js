@@ -15,7 +15,6 @@ $().ready(function(){
     var todoObject = function(id, text){
         this.id = id;
         this.text = text;
-        var that = this;
 
         this.textItem = $('<div></div>')
                 .addClass('form col-md-10')
@@ -28,10 +27,10 @@ $().ready(function(){
                 .append($('<button></button>')
                     .addClass('btn btn-danger pull-right todo_delete')
                     .bind('click', function(){
-                        $(that.listItem).remove();
-                        var index = todoItems.indexOf(that);
+                        $(this.listItem).remove();
+                        var index = todoItems.indexOf(this);
                         todoItems.splice(index, 1);
-                    })
+                    }.bind(this))
                 );
 
         this.listItem = $('<li></li>')

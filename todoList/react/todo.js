@@ -60,7 +60,7 @@ var TodoList = React.createClass({
   }
 });
 
-React.renderComponent(
+React.render(
   <TodoApp />,
   document.getElementById('content')
 );
